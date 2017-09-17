@@ -1,10 +1,10 @@
 package vectors
 
 type Point struct {
-	X uint
-	Y uint
+	X int32
+	Y int32
 }
 type Vector struct {
  	coordinates Point
 }
-var Angel uint
+var Angel int32
