@@ -2,6 +2,7 @@ package vectors
 
 import (
 	"errors"
+	"math"
 )
 func GetVector(start Point, stop Point) (Vector, error) {
 	point :=  Vector{}
@@ -51,8 +52,9 @@ func GetVector(start Point, stop Point) (Vector, error) {
 	return point, nil
 }
 
-func VectorLenght(v Vector) (int, error) {
-	return 10,nil
+func VectorLenght(v Vector) (int64, error) {
+	lenght := math.Sqrt(float64(v.Coordinates.X*v.Coordinates.X)+float64(v.Coordinates.Y*v.Coordinates.Y))
+	return int64(lenght),nil
 }
 
 func Normalize(v Vector) (Vector, error) {
