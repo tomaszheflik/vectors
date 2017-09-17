@@ -64,6 +64,17 @@ func Normalize(v Vector) (Vector, error) {
 	return vector, nil
 }
 
-func GetAngel(v1 Vector, v2 Vector) (int, error) {
-	return 20, nil
+func GetAngel(v1 Vector, v2 Vector)  (float64, float64) {
+	product := GetProd(v1, v2)
+	lenght1 := VectorLenght(v1)
+	lenght2 := VectorLenght(v2)
+
+	angRad := math.Acos(float64(product)/float64(lenght1)*float64(lenght2))
+	angDeg := (180/math.Pi)*angRad
+	return angRad, angDeg
+}
+
+func GetProd(v1 Vector, v2 Vector)  int64 {
+	prod := int64(v1.Coordinates.X * v2.Coordinates.X) + int64(v1.Coordinates.Y * v2.Coordinates.Y)
+	return prod
 }
