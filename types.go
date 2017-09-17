@@ -5,6 +5,6 @@ type Point struct {
 	Y int32
 }
 type Vector struct {
- 	coordinates Point
+ 	Coordinates Point
 }
 var Angel int32
