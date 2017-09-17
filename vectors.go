@@ -3,7 +3,7 @@ package vectors
 import (
 	"fmt"
 )
-func getVector(start Point, stop Point) (Point, error) {
+func GetVector(start Point, stop Point) (Point, error) {
 	fmt.Printf("Calulate vector from two points")
 	var point Point
 	point.x = 10
@@ -11,7 +11,7 @@ func getVector(start Point, stop Point) (Point, error) {
 	return point, nil
 }
 
-func normalize(v Vector) (Vector, error) {
+func Normalize(v Vector) (Vector, error) {
 	var vector Vector
 	vector.coordinates.x = 10
 	vector.coordinates.y = 10
