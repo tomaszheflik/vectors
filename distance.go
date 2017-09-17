@@ -1,13 +1,13 @@
 package vectors
 
-func GetScale(p1 point, p2 point) (int, error) {
+func GetScale(p1 Point, p2 Point) (int, error) {
 	return 10, nil
 }
 
-func GetXDistance(p1 point, p2 point) (int, error) {
+func GetXDistance(p1 Point, p2 Point) (int, error) {
 	return 10, nil
 }
 
-func GetYDistance(p1 point, p2 point) (int, error) {
+func GetYDistance(p1 Point, p2 Point) (int, error) {
 	return 10, nil
 }
