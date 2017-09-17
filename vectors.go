@@ -52,7 +52,7 @@ func GetVector(start Point, stop Point) (Vector, error) {
 	return point, nil
 }
 
-func VectorLenght(v Vector) int64 {
+func GetLenght(v Vector) int64 {
 	lenght := math.Sqrt(float64(v.Coordinates.X*v.Coordinates.X)+float64(v.Coordinates.Y*v.Coordinates.Y))
 	return int64(lenght)
 }
@@ -66,8 +66,8 @@ func Normalize(v Vector) (Vector, error) {
 
 func GetAngel(v1 Vector, v2 Vector)  (float64, float64) {
 	product := GetProd(v1, v2)
-	lenght1 := VectorLenght(v1)
-	lenght2 := VectorLenght(v2)
+	lenght1 := GetLenght(v1)
+	lenght2 := GetLenght(v2)
 
 	angRad := math.Acos(float64(product)/float64(lenght1)*float64(lenght2))
 	angDeg := (180/math.Pi)*angRad
