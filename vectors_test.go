@@ -119,10 +119,8 @@ func TestVectorLenght(t *testing.T) {
 	vector := v.Vector{}
 	vector.Coordinates.X = 5
 	vector.Coordinates.Y = 5
-	lenght, err := v.VectorLenght(vector)
-	if err != nil {
-		t.Error("Unable to calculate vector lenght")
-	}
+	lenght := v.VectorLenght(vector)
+
 	if lenght != expected {
 		t.Error(
 			"Expected lenght = ",expected," got lenhght =",lenght,"\n",

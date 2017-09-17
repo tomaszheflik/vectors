@@ -52,9 +52,9 @@ func GetVector(start Point, stop Point) (Vector, error) {
 	return point, nil
 }
 
-func VectorLenght(v Vector) (int64, error) {
+func VectorLenght(v Vector) int64 {
 	lenght := math.Sqrt(float64(v.Coordinates.X*v.Coordinates.X)+float64(v.Coordinates.Y*v.Coordinates.Y))
-	return int64(lenght),nil
+	return int64(lenght)
 }
 
 func Normalize(v Vector) (Vector, error) {
