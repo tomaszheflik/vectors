@@ -74,6 +74,7 @@ func TestGetVectorBottom(t *testing.T) {
 		)
 	}
 }
+
 func TestGetVectorBottomLeft(t *testing.T) {
 	start := v.Point{100, 100}
 	stop := v.Point{50, 150}
@@ -87,6 +88,7 @@ func TestGetVectorBottomLeft(t *testing.T) {
 		)
 	}
 }
+
 func TestGetVectorLeft(t *testing.T) {
 	start := v.Point{100, 100}
 	stop := v.Point{50, 100}
@@ -100,6 +102,7 @@ func TestGetVectorLeft(t *testing.T) {
 		)
 	}
 }
+
 func TestGetVectorTopLeft(t *testing.T) {
 	start := v.Point{100, 100}
 	stop := v.Point{50, 50}
@@ -115,7 +118,7 @@ func TestGetVectorTopLeft(t *testing.T) {
 }
 
 func TestVectorLenght(t *testing.T) {
-	expected := int64(7)
+	expected := 7.0710678118654755
 	vector := v.Vector{}
 	vector.Coordinates.X = 5
 	vector.Coordinates.Y = 5

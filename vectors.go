@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math"
 )
+
 func GetVector(start Point, stop Point) (Vector, error) {
 	point :=  Vector{}
 	// Top orientation
@@ -52,9 +53,9 @@ func GetVector(start Point, stop Point) (Vector, error) {
 	return point, nil
 }
 
-func GetLenght(v Vector) int64 {
-	lenght := math.Sqrt(float64(v.Coordinates.X*v.Coordinates.X)+float64(v.Coordinates.Y*v.Coordinates.Y))
-	return int64(lenght)
+func GetLenght(v Vector) float64 {
+	lenght := math.Sqrt(float64(v.Coordinates.X)*float64(v.Coordinates.X)+float64(v.Coordinates.Y)*float64(v.Coordinates.Y))
+	return lenght
 }
 
 func Normalize(v Vector) (Vector, error) {
@@ -68,13 +69,12 @@ func GetAngel(v1 Vector, v2 Vector)  (float64, float64) {
 	product := GetProd(v1, v2)
 	lenght1 := GetLenght(v1)
 	lenght2 := GetLenght(v2)
-
-	angRad := math.Acos(float64(product)/float64(lenght1)*float64(lenght2))
+	angRad := math.Acos(product/(lenght1*lenght2))
 	angDeg := (180/math.Pi)*angRad
 	return angRad, angDeg
 }
 
-func GetProd(v1 Vector, v2 Vector)  int64 {
-	prod := int64(v1.Coordinates.X * v2.Coordinates.X) + int64(v1.Coordinates.Y * v2.Coordinates.Y)
-	return prod
+func GetProd(v1 Vector, v2 Vector) float64 {
+	product := (v1.Coordinates.X * v2.Coordinates.X) + (v1.Coordinates.Y * v2.Coordinates.Y)
+	return float64(product)
 }
