@@ -78,3 +78,7 @@ func GetProd(v1 Vector, v2 Vector) float64 {
 	product := (v1.Coordinates.X * v2.Coordinates.X) + (v1.Coordinates.Y * v2.Coordinates.Y)
 	return float64(product)
 }
+
+func Round(x, unit float64) float64 {
+	return float64(int64(x/unit+0.5)) * unit
+}
