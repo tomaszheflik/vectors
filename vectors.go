@@ -59,6 +59,7 @@ func GetLenght(v Vector) float64 {
 }
 
 func Normalize(v Vector) (Vector, error) {
+	// This function is not implemented
 	var vector Vector
 	vector.Coordinates.X = 10
 	vector.Coordinates.Y = 10
