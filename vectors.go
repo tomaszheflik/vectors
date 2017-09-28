@@ -39,7 +39,7 @@ func GetVector(start Point, stop Point) (Vector, error) {
 	}
 	// Left orientation
 	if stop.X < start.X && stop.Y == start.Y {
-		point.Coordinates.X = (stop.X - start.X)
+		point.Coordinates.X = stop.X - start.X
 		point.Coordinates.Y = stop.Y - start.Y
 	}
 	// Left top orientation
@@ -47,7 +47,7 @@ func GetVector(start Point, stop Point) (Vector, error) {
 		point.Coordinates.X = stop.X - start.X
 		point.Coordinates.Y = (stop.Y - start.Y)*-1
 	}
-	if stop.X == 0 && start.Y ==0 && stop.X == 0 && stop.Y == 0 {
+	if stop.X == 0 && stop.Y ==0 && start.X == 0 && start.Y == 0 {
 		return point, errors.New("Zero lenght vectors")
 	}
 	return point, nil
